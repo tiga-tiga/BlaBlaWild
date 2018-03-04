@@ -35,7 +35,7 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 {
 
 
-                    intent.putExtra("depeartureTitle", testDeparture);
+                    intent.putExtra("departureTitle", testDeparture);
                     intent.putExtra("destinationTitle", testDestination);
                     startActivity(intent);
 
