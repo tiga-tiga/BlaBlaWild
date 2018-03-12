@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,14 +28,35 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        goToItinerarySearchActivity();
+        goToVehicleActivity();
 
     }
     /*function to go in itinerarySearchActivity*/
-    public void goToItinerarySearchActivity(View view)
+
+    public void goToItinerarySearchActivity()
     {
-        Intent intent = new Intent(this, ItinerarySearchActivity.class);
-        startActivity(intent);
+        Button search = (Button) findViewById(R.id.buttonSearch);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ItinerarySearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+    public void goToVehicleActivity()
+    {
+        Button vehicle= (Button) findViewById(R.id.buttonVehicle);
+        vehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentv = new Intent(MainActivity.this, VehicleActivity.class);
+                startActivity(intentv);
+            }
+        });
     }
 
     @Override

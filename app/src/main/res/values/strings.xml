@@ -6,4 +6,17 @@
     <string name="destnation">Destnation</string>
     <string name="departure">Departure</string>
     <string name="date">Date</string>
+    <string name="hintHours">Hours</string>
+    <string name="hintKilometers">Kilometers</string>
+    <string name="hintModel">Model</string>
+    <string name="hintBrand">Brand</string>
+    <string name="hintButtonSend">SEND</string>
+    <string name="hintSpeed">Speed</string>
+
+    <string-array name="vehicleList">
+        <item>Please select..</item>
+        <item>Car</item>
+        <item>Boat</item>
+        <item>Plane</item>
+    </string-array>
 </resources>
