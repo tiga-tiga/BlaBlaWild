@@ -46,7 +46,7 @@ public class TripAdapter extends ArrayAdapter<TripModel> {
 
         firstname.setText(trip.getFirstname());
         lastname.setText(trip.getLastname());
-        String prices = String.valueOf(trip.getPrice());
+        String prices = String.valueOf(trip.getPrice() + "$");
         price.setText(prices);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy-hh:mm");
         String date_format = sdf.format(trip.getDate());

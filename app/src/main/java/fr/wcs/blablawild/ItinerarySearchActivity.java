@@ -64,8 +64,10 @@ public class ItinerarySearchActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText departure = findViewById(R.id.editTextDeparture);
                 EditText destination = findViewById(R.id.editTextDestination);
+                EditText date = findViewById(R.id.editTextDate);
                 String testDeparture = departure.getText().toString();
                 String testDestination = destination.getText().toString();
+                String testDate = date.getText().toString();
 
                 if(testDeparture.length() == 0 || testDestination.length() == 0)
                 {
@@ -73,10 +75,10 @@ public class ItinerarySearchActivity extends AppCompatActivity {
                 }
                 else
                 {
-
-
-                    intent.putExtra("departureTitle", testDeparture);
-                    intent.putExtra("destinationTitle", testDestination);
+                    //parcelable searchModel
+                    intent.putExtra("searchModel", new SearchModel(testDeparture,testDestination, testDate));
+                    //intent.putExtra("departureTitle", testDeparture);
+                    //intent.putExtra("destinationTitle", testDestination);
                     startActivity(intent);
 
 
