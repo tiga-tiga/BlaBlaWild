@@ -107,7 +107,7 @@ public class VehicleActivity extends AppCompatActivity {
                             String brandDescription = brand.getText().toString();
                             String modelDescription = model.getText().toString();
                             String speeddesc = speed.getText().toString();
-                            if(TextUtils.isEmpty(hours.getText())) {
+                            if(TextUtils.isEmpty(speed.getText())) {
                                 speeddesc = "0";
                             }
                             int speedDescription = Integer.valueOf(speeddesc);

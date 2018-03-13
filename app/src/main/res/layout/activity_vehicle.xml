@@ -25,7 +25,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hintHours"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextKilometers" />
@@ -38,7 +38,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/hintKilometers"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextModel" />
@@ -86,8 +86,8 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/hintSpeed"
+        android:inputType="number"
         android:visibility="gone"
-        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextHours" />
 </android.support.constraint.ConstraintLayout>
