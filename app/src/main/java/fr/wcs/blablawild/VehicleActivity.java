@@ -40,11 +40,16 @@ public class VehicleActivity extends AppCompatActivity {
         selectVehicle.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selection = selectVehicle.getItemAtPosition(position).toString();
+
+                // initialisation des champs
+                brand.setText("");
+                model.setText("");
+                kilometers.setText("");
+                hours.setText("");
+                speed.setText("");
 
                 //choix car
-                if (selection.matches("Car")) {
-
+                if (position == 1) {
                     button.setEnabled(true);
                     kilometers.setVisibility(View.VISIBLE);
                     hours.setVisibility(View.GONE);
@@ -53,8 +58,6 @@ public class VehicleActivity extends AppCompatActivity {
                     button.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
-
                              String brandDescription = brand.getText().toString();
                              String modelDescription = model.getText().toString();
                              String kmdesc = kilometers.getText().toString();
@@ -64,12 +67,11 @@ public class VehicleActivity extends AppCompatActivity {
                              int kmDescription = Integer.valueOf(kmdesc);
                             VehicleCar car = new VehicleCar(brandDescription,modelDescription,kmDescription);
                             Toast.makeText(VehicleActivity.this, car.getDescription(), Toast.LENGTH_SHORT).show();
-
                         }
                     });
                 }
                 //choix boat
-                if (selection.matches("Boat")){
+                if (position == 2){
                     button.setEnabled(true);
                     kilometers.setVisibility(View.GONE);
                     hours.setVisibility(View.VISIBLE);
@@ -94,7 +96,7 @@ public class VehicleActivity extends AppCompatActivity {
 
                 }
                 //choix plane
-                if (selection.matches("Plane")){
+                if (position == 3){
                     button.setEnabled(true);
                     kilometers.setVisibility(View.GONE);
                     hours.setVisibility(View.GONE);
@@ -118,7 +120,7 @@ public class VehicleActivity extends AppCompatActivity {
                     });
 
                 }
-                if(selection.matches("Please select..")){
+                if(position == 0){
                     button.setEnabled(false);
                     kilometers.setVisibility(View.GONE);
                     hours.setVisibility(View.GONE);
