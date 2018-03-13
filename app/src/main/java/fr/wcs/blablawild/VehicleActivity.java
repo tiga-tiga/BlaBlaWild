@@ -3,6 +3,7 @@ package fr.wcs.blablawild;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -53,9 +54,13 @@ public class VehicleActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
+
                              String brandDescription = brand.getText().toString();
                              String modelDescription = model.getText().toString();
                              String kmdesc = kilometers.getText().toString();
+                            if(TextUtils.isEmpty(kilometers.getText())) {
+                                kmdesc = "0";
+                            }
                              int kmDescription = Integer.valueOf(kmdesc);
                             VehicleCar car = new VehicleCar(brandDescription,modelDescription,kmDescription);
                             Toast.makeText(VehicleActivity.this, car.getDescription(), Toast.LENGTH_SHORT).show();
@@ -77,6 +82,9 @@ public class VehicleActivity extends AppCompatActivity {
                             String brandDescription = brand.getText().toString();
                             String modelDescription = model.getText().toString();
                             String hdesc = hours.getText().toString();
+                            if(TextUtils.isEmpty(hours.getText())) {
+                                hdesc = "0";
+                            }
                             int hDescription = Integer.valueOf(hdesc);
                             VehicleBoat boat = new VehicleBoat(brandDescription,modelDescription,hDescription);
                             Toast.makeText(VehicleActivity.this, boat.getDescription(), Toast.LENGTH_SHORT).show();
@@ -99,6 +107,9 @@ public class VehicleActivity extends AppCompatActivity {
                             String brandDescription = brand.getText().toString();
                             String modelDescription = model.getText().toString();
                             String speeddesc = speed.getText().toString();
+                            if(TextUtils.isEmpty(hours.getText())) {
+                                speeddesc = "0";
+                            }
                             int speedDescription = Integer.valueOf(speeddesc);
                             VehiclePlane plane = new VehiclePlane(brandDescription,modelDescription,speedDescription);
                             Toast.makeText(VehicleActivity.this, plane.getDescription(), Toast.LENGTH_SHORT).show();
